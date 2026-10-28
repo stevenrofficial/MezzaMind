@@ -9,6 +9,7 @@ import 'core/services/audio_engine_service.dart';
 import 'core/services/storage_service.dart';
 import 'core/theme/app_theme.dart';
 import 'features/dashboard/main_dashboard_screen.dart';
+import 'features/google_flow/services/google_flow_service.dart';
 import 'features/player/viewmodels/player_viewmodel.dart';
 import 'features/settings/viewmodels/settings_viewmodel.dart';
 import 'features/timer/viewmodels/timer_viewmodel.dart';
@@ -80,6 +81,11 @@ class MezzaMindApp extends StatelessWidget {
         ChangeNotifierProvider<SettingsViewModel>(
           create: (_) => SettingsViewModel(
             storageService: storageService,
+          ),
+        ),
+        ChangeNotifierProvider<GoogleFlowService>(
+          create: (_) => GoogleFlowService(
+            storageService.rawPrefs,
           ),
         ),
       ],

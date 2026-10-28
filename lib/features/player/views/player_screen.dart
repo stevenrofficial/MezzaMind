@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../google_flow/views/google_flow_studio_sheet.dart';
+import '../../google_flow/services/google_flow_service.dart';
 import '../../timer/viewmodels/timer_viewmodel.dart';
 import '../viewmodels/player_viewmodel.dart';
 import '../widgets/mode_selector_pills.dart';
@@ -22,7 +24,14 @@ class PlayerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final playerVM = context.watch<PlayerViewModel>();
     final timerVM = context.watch<TimerViewModel>();
+    final flowService = context.watch<GoogleFlowService>();
     final soundscape = playerVM.currentSoundscape;
+
+    final flowModeTracks = flowService.tracks
+        .where((t) => t.mode == playerVM.selectedMode)
+        .map((t) => t.toSoundscape())
+        .toList();
+    final combinedPresets = [...flowModeTracks, ...playerVM.currentModePresets];
 
     return Scaffold(
       backgroundColor: Colors.transparent,
@@ -72,9 +81,44 @@ class PlayerScreen extends StatelessWidget {
                       ],
                     ),
 
-                    // Quick Actions (Timer badge & Settings)
+                    // Quick Actions (Flow AI, Timer badge & Settings)
                     Row(
                       children: [
+                        // Google Flow Studio button
+                        GestureDetector(
+                          onTap: () => GoogleFlowStudioSheet.show(context),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFF4285F4).withOpacity(0.16),
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: const Color(0xFF4285F4).withOpacity(0.5),
+                              ),
+                            ),
+                            child: const Row(
+                              children: [
+                                Icon(
+                                  Icons.auto_awesome_rounded,
+                                  size: 13,
+                                  color: Color(0xFF4285F4),
+                                ),
+                                SizedBox(width: 5),
+                                Text(
+                                  'Flow AI',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                    letterSpacing: 0.3,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+
                         // Timer status badge
                         GestureDetector(
                           onTap: onOpenTimer,
@@ -424,7 +468,7 @@ class PlayerScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '${playerVM.currentModePresets.length} available',
+                      '${combinedPresets.length} available',
                       style: const TextStyle(
                         fontSize: 11,
                         color: AppColors.textMuted,
@@ -441,7 +485,7 @@ class PlayerScreen extends StatelessWidget {
               sliver: SliverList(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
-                    final preset = playerVM.currentModePresets[index];
+                    final preset = combinedPresets[index];
                     final isSelected = preset.id == soundscape.id;
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 10),
@@ -459,7 +503,7 @@ class PlayerScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  childCount: playerVM.currentModePresets.length,
+                  childCount: combinedPresets.length,
                 ),
               ),
             ),

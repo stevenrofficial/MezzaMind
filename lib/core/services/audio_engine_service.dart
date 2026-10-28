@@ -75,9 +75,15 @@ class AudioEngineService {
           Uri.parse(soundscape.audioUrl),
           tag: mediaItem,
         );
-      } else {
+      } else if (soundscape.audioUrl.startsWith('assets/')) {
         // Load bundled offline asset
         audioSource = AudioSource.asset(
+          soundscape.audioUrl,
+          tag: mediaItem,
+        );
+      } else {
+        // Load picked local storage file
+        audioSource = AudioSource.file(
           soundscape.audioUrl,
           tag: mediaItem,
         );
