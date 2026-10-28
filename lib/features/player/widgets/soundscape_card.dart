@@ -116,14 +116,44 @@ class SoundscapeCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    soundscape.binauralHz,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontFamily: 'monospace',
-                      color: soundscape.primaryColor.withOpacity(0.85),
-                      fontWeight: FontWeight.w500,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        soundscape.binauralHz,
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontFamily: 'monospace',
+                          color: soundscape.primaryColor.withOpacity(0.85),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      if (soundscape.bpm != null) ...[
+                        const SizedBox(width: 8),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+                          decoration: BoxDecoration(
+                            color: soundscape.primaryColor.withOpacity(0.12),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.speed_rounded, size: 10, color: soundscape.primaryColor),
+                              const SizedBox(width: 3),
+                              Text(
+                                '${soundscape.bpm} BPM',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontFamily: 'monospace',
+                                  fontWeight: FontWeight.w700,
+                                  color: soundscape.primaryColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ],
               ),
@@ -197,3 +227,4 @@ class _WaveBar extends StatelessWidget {
     );
   }
 }
+

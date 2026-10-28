@@ -192,3 +192,4 @@ class _PulseWavePainter extends CustomPainter {
         oldDelegate.colorA != colorA;
   }
 }
+

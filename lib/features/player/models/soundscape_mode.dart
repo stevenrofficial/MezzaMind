@@ -44,3 +44,4 @@ enum SoundscapeMode {
     required this.badge,
   });
 }
+

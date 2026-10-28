@@ -23,3 +23,4 @@ class FocusPreset {
 
   Duration get duration => Duration(minutes: minutes);
 }
+

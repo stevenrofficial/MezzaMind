@@ -205,9 +205,40 @@ class PlayerScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        if (soundscape.bpm != null) ...[
+                          const SizedBox(width: 8),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            decoration: BoxDecoration(
+                              color: soundscape.accentColor.withOpacity(0.16),
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(
+                                color: soundscape.accentColor.withOpacity(0.4),
+                                width: 0.8,
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.speed_rounded, size: 12, color: soundscape.accentColor),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '${soundscape.bpm} BPM',
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    fontFamily: 'monospace',
+                                    fontWeight: FontWeight.w700,
+                                    color: soundscape.accentColor,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                         const SizedBox(width: 8),
                         Text(
-                          '•  ${soundscape.mode.title}',
+                          '•  ${soundscape.genre ?? soundscape.mode.title}',
                           style: const TextStyle(
                             fontSize: 13,
                             color: AppColors.textSecondary,
@@ -326,3 +357,4 @@ class PlayerScreen extends StatelessWidget {
     );
   }
 }
+

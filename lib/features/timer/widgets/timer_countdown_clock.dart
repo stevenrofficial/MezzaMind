@@ -145,3 +145,4 @@ class _TimerRingPainter extends CustomPainter {
         oldDelegate.accentColor != accentColor;
   }
 }
+

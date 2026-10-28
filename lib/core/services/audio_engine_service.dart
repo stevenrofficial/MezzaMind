@@ -58,18 +58,30 @@ class AudioEngineService {
     _currentSoundscapeController.add(soundscape);
 
     try {
-      final audioSource = AudioSource.uri(
-        Uri.parse(soundscape.audioUrl),
-        tag: MediaItem(
-          id: soundscape.id,
-          album: 'MezzaMind Ambient',
-          title: soundscape.title,
-          artist: '${soundscape.mode.title} • ${soundscape.binauralHz}',
-          displayTitle: soundscape.title,
-          displaySubtitle: soundscape.subtitle,
-          displayDescription: soundscape.tag,
-        ),
+      final mediaItem = MediaItem(
+        id: soundscape.id,
+        album: 'MezzaMind Ambient',
+        title: soundscape.title,
+        artist: '${soundscape.mode.title} • ${soundscape.binauralHz}',
+        displayTitle: soundscape.title,
+        displaySubtitle: soundscape.subtitle,
+        displayDescription: soundscape.tag,
       );
+
+      final AudioSource audioSource;
+      if (soundscape.audioUrl.startsWith('http://') ||
+          soundscape.audioUrl.startsWith('https://')) {
+        audioSource = AudioSource.uri(
+          Uri.parse(soundscape.audioUrl),
+          tag: mediaItem,
+        );
+      } else {
+        // Load bundled offline asset
+        audioSource = AudioSource.asset(
+          soundscape.audioUrl,
+          tag: mediaItem,
+        );
+      }
 
       await _player.setAudioSource(audioSource, preload: true);
       await _player.setLoopMode(LoopMode.one);
@@ -160,3 +172,4 @@ class AudioEngineService {
     await _intensityController.close();
   }
 }
+

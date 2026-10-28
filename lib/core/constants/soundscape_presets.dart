@@ -7,13 +7,109 @@ class SoundscapePresets {
   SoundscapePresets._();
 
   static const List<Soundscape> all = [
-    // --- CODING FLOW ---
+    // ==========================================
+    // 🎧 FUNCTIONAL RHYTHMIC SONGS
+    // ==========================================
+
+    // SONG 1: 124 BPM Minimal Cyber Techno (Beta)
+    Soundscape(
+      id: 'song_cyberpunk_terminal',
+      title: 'Cyberpunk Terminal',
+      subtitle: '124 BPM driving minimal techno with hypnotic arpeggiated bass & rain',
+      mode: SoundscapeMode.coding,
+      audioUrl: 'assets/audio/songs/cyberpunk_terminal.wav',
+      binauralHz: '16 Hz Beta Wave',
+      tag: '124 BPM • TECHNO',
+      primaryColor: AppColors.cyanAccent,
+      accentColor: AppColors.tealAccent,
+      icon: Icons.graphic_eq_rounded,
+      bpm: 124,
+      genre: 'MINIMAL TECHNO',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.85,
+    ),
+
+    // SONG 2: 128 BPM Modular Electronic Pulse (Gamma)
+    Soundscape(
+      id: 'song_gamma_hyperdrive',
+      title: 'Gamma Hyperdrive',
+      subtitle: '128 BPM fast-paced modular pulse with 40Hz cognitive entrainment',
+      mode: SoundscapeMode.deepFocus,
+      audioUrl: 'assets/audio/songs/gamma_hyperdrive.wav',
+      binauralHz: '40 Hz Gamma Wave',
+      tag: '128 BPM • MODULAR',
+      primaryColor: AppColors.violetAccent,
+      accentColor: AppColors.cyanAccent,
+      icon: Icons.bolt_rounded,
+      bpm: 128,
+      genre: 'MODULAR PULSE',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.9,
+    ),
+
+    // SONG 3: 85 BPM Lo-Fi Hip Hop Beat (Alpha)
+    Soundscape(
+      id: 'song_lofi_circuit',
+      title: 'Midnight Lo-Fi Circuit',
+      subtitle: '85 BPM boom-bap drums with electric piano chords & vinyl tape warmth',
+      mode: SoundscapeMode.coding,
+      audioUrl: 'assets/audio/songs/midnight_lofi_circuit.wav',
+      binauralHz: '12 Hz Alpha Wave',
+      tag: '85 BPM • LO-FI',
+      primaryColor: AppColors.amberAccent,
+      accentColor: AppColors.roseAccent,
+      icon: Icons.album_rounded,
+      bpm: 85,
+      genre: 'LO-FI CHILL',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.75,
+    ),
+
+    // SONG 4: 78 BPM Organic Downtempo Dub (Theta)
+    Soundscape(
+      id: 'song_kyoto_downtempo',
+      title: 'Kyoto Downtempo Dub',
+      subtitle: '78 BPM organic downtempo groove with bamboo clicks & alpine water',
+      mode: SoundscapeMode.relax,
+      audioUrl: 'assets/audio/songs/kyoto_downtempo.wav',
+      binauralHz: '6 Hz Theta Wave',
+      tag: '78 BPM • DOWNTEMPO',
+      primaryColor: AppColors.emeraldAccent,
+      accentColor: AppColors.tealAccent,
+      icon: Icons.spa_rounded,
+      bpm: 78,
+      genre: 'AMBIENT DOWNTEMPO',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.75,
+    ),
+
+    // SONG 5: 50 BPM Sub-Bass Heartbeat & Pad (Delta)
+    Soundscape(
+      id: 'song_nocturnal_delta',
+      title: 'Nocturnal Delta Drift',
+      subtitle: '50 BPM resting heartbeat pulse with deep chord swells & night rain',
+      mode: SoundscapeMode.sleep,
+      audioUrl: 'assets/audio/songs/nocturnal_delta_drift.wav',
+      binauralHz: '2 Hz Delta Wave',
+      tag: '50 BPM • HEARTBEAT',
+      primaryColor: AppColors.violetAccent,
+      accentColor: AppColors.emeraldAccent,
+      icon: Icons.nightlight_round,
+      bpm: 50,
+      genre: 'DELTA PULSE',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.65,
+    ),
+
+    // ==========================================
+    // 🌊 PURE AMBIENT & SOUNDSCAPES
+    // ==========================================
     Soundscape(
       id: 'cyber_rain',
       title: 'Neon Rain & Terminal',
       subtitle: 'Steady downpour over nocturnal city glass with rhythmic cadence',
       mode: SoundscapeMode.coding,
-      audioUrl: 'https://actions.google.com/sounds/v1/weather/ambient_rain.ogg',
+      audioUrl: 'assets/audio/cyber_rain.wav',
       binauralHz: '16 Hz Beta Wave',
       tag: 'FLOW STATE',
       primaryColor: AppColors.cyanAccent,
@@ -26,7 +122,7 @@ class SoundscapePresets {
       title: 'Midnight Monolith',
       subtitle: 'Low-frequency resonant hum for architecture and syntax thinking',
       mode: SoundscapeMode.coding,
-      audioUrl: 'https://actions.google.com/sounds/v1/science_fiction/alien_hum_loop.ogg',
+      audioUrl: 'assets/audio/midnight_monolith.wav',
       binauralHz: '14 Hz Beta Wave',
       tag: 'DEEP LOGIC',
       primaryColor: AppColors.violetAccent,
@@ -35,26 +131,11 @@ class SoundscapePresets {
       defaultIntensity: 0.7,
     ),
     Soundscape(
-      id: 'cozy_lab',
-      title: '3 AM Cyber Cafe',
-      subtitle: 'Subtle muffled coffee lounge murmur with warm acoustic resonance',
-      mode: SoundscapeMode.coding,
-      audioUrl: 'https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg',
-      binauralHz: '18 Hz Beta Wave',
-      tag: 'COLLAB FOCUS',
-      primaryColor: AppColors.amberAccent,
-      accentColor: AppColors.roseAccent,
-      icon: Icons.coffee_rounded,
-      defaultIntensity: 0.65,
-    ),
-
-    // --- DEEP FOCUS ---
-    Soundscape(
       id: 'gamma_singularity',
       title: '40Hz Gamma Singularity',
       subtitle: 'Synchronized cognitive entrainment for maximum bandwidth',
       mode: SoundscapeMode.deepFocus,
-      audioUrl: 'https://actions.google.com/sounds/v1/weather/wind_synthetic.ogg',
+      audioUrl: 'assets/audio/gamma_singularity.wav',
       binauralHz: '40 Hz Gamma',
       tag: 'COGNITIVE BOOST',
       primaryColor: AppColors.cyanAccent,
@@ -63,26 +144,11 @@ class SoundscapePresets {
       defaultIntensity: 0.85,
     ),
     Soundscape(
-      id: 'storm_over_himalayas',
-      title: 'Himalayan Ridge Storm',
-      subtitle: 'Distant rolling thunder and deep mountain pressure',
-      mode: SoundscapeMode.deepFocus,
-      audioUrl: 'https://actions.google.com/sounds/v1/weather/thunderstorm.ogg',
-      binauralHz: '38 Hz Gamma',
-      tag: 'INTENSE FLOW',
-      primaryColor: AppColors.violetAccent,
-      accentColor: AppColors.tealAccent,
-      icon: Icons.thunderstorm_rounded,
-      defaultIntensity: 0.75,
-    ),
-
-    // --- ZEN RELAX ---
-    Soundscape(
       id: 'kyoto_bamboo_stream',
       title: 'Kyoto Bamboo Spring',
       subtitle: 'Pristine flowing alpine stream clearing mental fatigue',
       mode: SoundscapeMode.relax,
-      audioUrl: 'https://actions.google.com/sounds/v1/water/stream_water.ogg',
+      audioUrl: 'assets/audio/kyoto_stream.wav',
       binauralHz: '6 Hz Theta Wave',
       tag: 'MINDFULNESS',
       primaryColor: AppColors.emeraldAccent,
@@ -91,39 +157,11 @@ class SoundscapePresets {
       defaultIntensity: 0.7,
     ),
     Soundscape(
-      id: 'celestial_drift',
-      title: 'Celestial Drift',
-      subtitle: 'Smooth ambient harmonics to untangle post-sprint exhaustion',
-      mode: SoundscapeMode.relax,
-      audioUrl: 'https://actions.google.com/sounds/v1/science_fiction/alien_hum_loop.ogg',
-      binauralHz: '7.83 Hz Schumann',
-      tag: 'REST & RESTORE',
-      primaryColor: AppColors.roseAccent,
-      accentColor: AppColors.amberAccent,
-      icon: Icons.blur_on_rounded,
-      defaultIntensity: 0.6,
-    ),
-
-    // --- DEEP SLEEP ---
-    Soundscape(
-      id: 'heavy_roof_downpour',
-      title: 'Nocturnal Roof Rain',
-      subtitle: 'Warm rhythmic downpour inducing rapid Delta phase sleep',
-      mode: SoundscapeMode.sleep,
-      audioUrl: 'https://actions.google.com/sounds/v1/weather/rain_heavy.ogg',
-      binauralHz: '2 Hz Delta Wave',
-      tag: 'RESTFUL SLEEP',
-      primaryColor: AppColors.violetAccent,
-      accentColor: AppColors.emeraldAccent,
-      icon: Icons.bedtime_rounded,
-      defaultIntensity: 0.6,
-    ),
-    Soundscape(
       id: 'deep_ocean_abyss',
       title: 'Deep Ocean Trench',
       subtitle: 'Slow breathing sub-aquatic tidal rhythm for nervous system reset',
       mode: SoundscapeMode.sleep,
-      audioUrl: 'https://actions.google.com/sounds/v1/water/stream_water.ogg',
+      audioUrl: 'assets/audio/ocean_abyss.wav',
       binauralHz: '1.5 Hz Delta Wave',
       tag: 'SLOW-WAVE REST',
       primaryColor: AppColors.tealAccent,
@@ -132,6 +170,12 @@ class SoundscapePresets {
       defaultIntensity: 0.55,
     ),
   ];
+
+  static List<Soundscape> get rhythmicSongs =>
+      all.where((s) => s.hasRhythmBeat).toList();
+
+  static List<Soundscape> get pureAmbience =>
+      all.where((s) => !s.hasRhythmBeat).toList();
 
   static List<Soundscape> getByMode(SoundscapeMode mode) {
     return all.where((s) => s.mode == mode).toList();

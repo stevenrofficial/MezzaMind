@@ -132,3 +132,4 @@ class PersistentMiniPlayer extends StatelessWidget {
     );
   }
 }
+
