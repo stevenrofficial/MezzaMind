@@ -11,6 +11,22 @@ class SoundscapePresets {
     // 1. DEEP FOCUS / CODING (Beta / Low Gamma: 14 Hz – 40 Hz • 50–90 mins)
     // =========================================================================
     Soundscape(
+      id: 'hightech_138_techno',
+      title: 'High-Tech 138 • Neural Drive',
+      subtitle: 'Driving 138 BPM hypnotic minimal techno groove, 909 drums, micro-percussion, rolling analog bass & 14-40Hz pulse',
+      mode: SoundscapeMode.deepFocus,
+      audioUrl: 'assets/audio/songs/hightech_138_techno.wav',
+      binauralHz: '14–40 Hz Beta/Gamma',
+      tag: '138 BPM • TECHNO',
+      primaryColor: AppColors.cyanAccent,
+      accentColor: AppColors.violetAccent,
+      icon: Icons.bolt_rounded,
+      bpm: 138,
+      genre: 'MINIMAL HIGH-TECH',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.9,
+    ),
+    Soundscape(
       id: 'neoclassical_focus',
       title: 'Neo-Classical Code Arpeggio',
       subtitle: 'Minimalist felt piano arpeggios, sparse modular pads & clean 60 BPM transient tick',
