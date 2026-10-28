@@ -7,175 +7,154 @@ class SoundscapePresets {
   SoundscapePresets._();
 
   static const List<Soundscape> all = [
-    // ==========================================
-    // 🎧 FUNCTIONAL RHYTHMIC SONGS
-    // ==========================================
-
-    // SONG 1: 124 BPM Minimal Cyber Techno (Beta)
+    // =========================================================================
+    // 1. DEEP FOCUS / CODING (Beta / Low Gamma: 14 Hz – 40 Hz • 50–90 mins)
+    // =========================================================================
     Soundscape(
-      id: 'song_cyberpunk_terminal',
-      title: 'Cyberpunk Terminal',
-      subtitle: '124 BPM driving minimal techno with hypnotic arpeggiated bass & rain',
-      mode: SoundscapeMode.coding,
-      audioUrl: 'assets/audio/songs/cyberpunk_terminal.wav',
+      id: 'neoclassical_focus',
+      title: 'Neo-Classical Code Arpeggio',
+      subtitle: 'Minimalist felt piano arpeggios, sparse modular pads & clean 60 BPM transient tick',
+      mode: SoundscapeMode.deepFocus,
+      audioUrl: 'assets/audio/songs/neoclassical_focus.wav',
       binauralHz: '16 Hz Beta Wave',
-      tag: '124 BPM • TECHNO',
+      tag: '60 BPM • NEO-CLASSICAL',
       primaryColor: AppColors.cyanAccent,
       accentColor: AppColors.tealAccent,
-      icon: Icons.graphic_eq_rounded,
-      bpm: 124,
-      genre: 'MINIMAL TECHNO',
+      icon: Icons.piano_rounded,
+      bpm: 60,
+      genre: 'NEO-CLASSICAL PIANO',
       hasRhythmBeat: true,
       defaultIntensity: 0.85,
     ),
-
-    // SONG 2: 128 BPM Modular Electronic Pulse (Gamma)
     Soundscape(
-      id: 'song_gamma_hyperdrive',
-      title: 'Gamma Hyperdrive',
-      subtitle: '128 BPM fast-paced modular pulse with 40Hz cognitive entrainment',
+      id: 'modular_synth_flow',
+      title: 'Modular Synth Flow',
+      subtitle: 'Sparse modular synth pads & steady organic cadence for sustained logic sprints',
       mode: SoundscapeMode.deepFocus,
-      audioUrl: 'assets/audio/songs/gamma_hyperdrive.wav',
-      binauralHz: '40 Hz Gamma Wave',
-      tag: '128 BPM • MODULAR',
-      primaryColor: AppColors.violetAccent,
-      accentColor: AppColors.cyanAccent,
-      icon: Icons.bolt_rounded,
-      bpm: 128,
-      genre: 'MODULAR PULSE',
-      hasRhythmBeat: true,
-      defaultIntensity: 0.9,
-    ),
-
-    // SONG 3: 85 BPM Lo-Fi Hip Hop Beat (Alpha)
-    Soundscape(
-      id: 'song_lofi_circuit',
-      title: 'Midnight Lo-Fi Circuit',
-      subtitle: '85 BPM boom-bap drums with electric piano chords & vinyl tape warmth',
-      mode: SoundscapeMode.coding,
-      audioUrl: 'assets/audio/songs/midnight_lofi_circuit.wav',
-      binauralHz: '12 Hz Alpha Wave',
-      tag: '85 BPM • LO-FI',
-      primaryColor: AppColors.amberAccent,
-      accentColor: AppColors.roseAccent,
-      icon: Icons.album_rounded,
-      bpm: 85,
-      genre: 'LO-FI CHILL',
-      hasRhythmBeat: true,
-      defaultIntensity: 0.75,
-    ),
-
-    // SONG 4: 78 BPM Organic Downtempo Dub (Theta)
-    Soundscape(
-      id: 'song_kyoto_downtempo',
-      title: 'Kyoto Downtempo Dub',
-      subtitle: '78 BPM organic downtempo groove with bamboo clicks & alpine water',
-      mode: SoundscapeMode.relax,
-      audioUrl: 'assets/audio/songs/kyoto_downtempo.wav',
-      binauralHz: '6 Hz Theta Wave',
-      tag: '78 BPM • DOWNTEMPO',
-      primaryColor: AppColors.emeraldAccent,
-      accentColor: AppColors.tealAccent,
-      icon: Icons.spa_rounded,
-      bpm: 78,
-      genre: 'AMBIENT DOWNTEMPO',
-      hasRhythmBeat: true,
-      defaultIntensity: 0.75,
-    ),
-
-    // SONG 5: 50 BPM Sub-Bass Heartbeat & Pad (Delta)
-    Soundscape(
-      id: 'song_nocturnal_delta',
-      title: 'Nocturnal Delta Drift',
-      subtitle: '50 BPM resting heartbeat pulse with deep chord swells & night rain',
-      mode: SoundscapeMode.sleep,
-      audioUrl: 'assets/audio/songs/nocturnal_delta_drift.wav',
-      binauralHz: '2 Hz Delta Wave',
-      tag: '50 BPM • HEARTBEAT',
-      primaryColor: AppColors.violetAccent,
-      accentColor: AppColors.emeraldAccent,
-      icon: Icons.nightlight_round,
-      bpm: 50,
-      genre: 'DELTA PULSE',
-      hasRhythmBeat: true,
-      defaultIntensity: 0.65,
-    ),
-
-    // ==========================================
-    // 🌊 PURE AMBIENT & SOUNDSCAPES
-    // ==========================================
-    Soundscape(
-      id: 'cyber_rain',
-      title: 'Neon Rain & Terminal',
-      subtitle: 'Steady downpour over nocturnal city glass with rhythmic cadence',
-      mode: SoundscapeMode.coding,
-      audioUrl: 'assets/audio/cyber_rain.wav',
-      binauralHz: '16 Hz Beta Wave',
-      tag: 'FLOW STATE',
-      primaryColor: AppColors.cyanAccent,
-      accentColor: AppColors.tealAccent,
-      icon: Icons.water_drop_rounded,
-      defaultIntensity: 0.8,
-    ),
-    Soundscape(
-      id: 'midnight_monolith',
-      title: 'Midnight Monolith',
-      subtitle: 'Low-frequency resonant hum for architecture and syntax thinking',
-      mode: SoundscapeMode.coding,
-      audioUrl: 'assets/audio/midnight_monolith.wav',
-      binauralHz: '14 Hz Beta Wave',
-      tag: 'DEEP LOGIC',
+      audioUrl: 'assets/audio/songs/modular_synth_flow.wav',
+      binauralHz: '40 Hz Low Gamma',
+      tag: '68 BPM • MODULAR',
       primaryColor: AppColors.violetAccent,
       accentColor: AppColors.cyanAccent,
       icon: Icons.terminal_rounded,
-      defaultIntensity: 0.7,
+      bpm: 68,
+      genre: 'MODULAR AMBIENT',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.8,
     ),
     Soundscape(
-      id: 'gamma_singularity',
-      title: '40Hz Gamma Singularity',
-      subtitle: 'Synchronized cognitive entrainment for maximum bandwidth',
+      id: 'cyber_rain',
+      title: 'Midnight Rain on Glass',
+      subtitle: 'Steady nocturnal downpour with low-frequency resonant hum',
       mode: SoundscapeMode.deepFocus,
-      audioUrl: 'assets/audio/gamma_singularity.wav',
-      binauralHz: '40 Hz Gamma',
-      tag: 'COGNITIVE BOOST',
+      audioUrl: 'assets/audio/cyber_rain.wav',
+      binauralHz: '16 Hz Beta Wave',
+      tag: 'SOUNDSCAPE',
       primaryColor: AppColors.cyanAccent,
       accentColor: AppColors.emeraldAccent,
-      icon: Icons.bolt_rounded,
-      defaultIntensity: 0.85,
+      icon: Icons.water_drop_rounded,
+      defaultIntensity: 0.75,
+    ),
+
+    // =========================================================================
+    // 2. CREATIVITY / IDEATION (Alpha / Theta Bridge: 8 Hz – 12 Hz • 30–45 mins)
+    // =========================================================================
+    Soundscape(
+      id: 'ideation_bloom',
+      title: 'Ideation Bloom',
+      subtitle: 'Warm ambient textures & filtered acoustic instrument harmonics with wide stereo panning',
+      mode: SoundscapeMode.creativity,
+      audioUrl: 'assets/audio/songs/ideation_bloom.wav',
+      binauralHz: '10 Hz Alpha/Theta Bridge',
+      tag: '72 BPM • ACOUSTIC AMBIENT',
+      primaryColor: AppColors.amberAccent,
+      accentColor: AppColors.roseAccent,
+      icon: Icons.lightbulb_outline_rounded,
+      bpm: 72,
+      genre: 'FILTERED ACOUSTIC',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.75,
     ),
     Soundscape(
-      id: 'kyoto_bamboo_stream',
+      id: 'kyoto_bamboo_spring',
       title: 'Kyoto Bamboo Spring',
-      subtitle: 'Pristine flowing alpine stream clearing mental fatigue',
-      mode: SoundscapeMode.relax,
+      subtitle: 'Alpine stream resonances lowering analytical filters for lateral problem-solving',
+      mode: SoundscapeMode.creativity,
       audioUrl: 'assets/audio/kyoto_stream.wav',
-      binauralHz: '6 Hz Theta Wave',
-      tag: 'MINDFULNESS',
+      binauralHz: '8 Hz Alpha/Theta',
+      tag: 'SOUNDSCAPE',
       primaryColor: AppColors.emeraldAccent,
       accentColor: AppColors.tealAccent,
       icon: Icons.waves_rounded,
       defaultIntensity: 0.7,
     ),
+
+    // =========================================================================
+    // 3. CALM / STRESS RELIEF (Alpha Waves: 8 Hz – 10 Hz • 15–30 mins)
+    // =========================================================================
     Soundscape(
-      id: 'deep_ocean_abyss',
-      title: 'Deep Ocean Trench',
-      subtitle: 'Slow breathing sub-aquatic tidal rhythm for nervous system reset',
+      id: 'calm_cello_vinyl',
+      title: 'Harmonic Cello & Vinyl',
+      subtitle: 'Slow-tempo warm chord progressions, soft cello drones, harmonic chimes & vinyl warmth',
+      mode: SoundscapeMode.calm,
+      audioUrl: 'assets/audio/songs/calm_cello_vinyl.wav',
+      binauralHz: '9 Hz Alpha Wave',
+      tag: '54 BPM • CELLO DRONE',
+      primaryColor: AppColors.roseAccent,
+      accentColor: AppColors.violetAccent,
+      icon: Icons.music_note_rounded,
+      bpm: 54,
+      genre: 'CELLO & CHIMES',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.7,
+    ),
+    Soundscape(
+      id: 'celestial_drift',
+      title: 'Celestial Drift & Wind',
+      subtitle: 'Soft evening wind and harmonic drones calming autonomic nervous system tone',
+      mode: SoundscapeMode.calm,
+      audioUrl: 'assets/audio/celestial_drift.wav',
+      binauralHz: '8.5 Hz Alpha Wave',
+      tag: 'SOUNDSCAPE',
+      primaryColor: AppColors.violetAccent,
+      accentColor: AppColors.roseAccent,
+      icon: Icons.air_rounded,
+      defaultIntensity: 0.65,
+    ),
+
+    // =========================================================================
+    // 4. SLEEP / DEEP REST (Delta Waves: 0.5 Hz – 4 Hz • 45 mins to 8 hours)
+    // =========================================================================
+    Soundscape(
+      id: 'oceanic_delta_sub',
+      title: 'Oceanic Delta Sub-Bass',
+      subtitle: 'Deep sub-bass brown noise, ultra-slow drone pads & zero sudden dynamic spikes',
       mode: SoundscapeMode.sleep,
-      audioUrl: 'assets/audio/ocean_abyss.wav',
+      audioUrl: 'assets/audio/songs/oceanic_delta_sub.wav',
       binauralHz: '1.5 Hz Delta Wave',
-      tag: 'SLOW-WAVE REST',
+      tag: '42 BPM • DELTA SUB',
       primaryColor: AppColors.tealAccent,
       accentColor: AppColors.cyanAccent,
+      icon: Icons.bedtime_rounded,
+      bpm: 42,
+      genre: 'SUB-BASS BROWN NOISE',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.6,
+    ),
+    Soundscape(
+      id: 'deep_sleep_rain',
+      title: 'Nocturnal Heavy Downpour',
+      subtitle: 'Deep low-pass roof rain encouraging transition into slow-wave restorative sleep',
+      mode: SoundscapeMode.sleep,
+      audioUrl: 'assets/audio/deep_sleep_rain.wav',
+      binauralHz: '2 Hz Delta Wave',
+      tag: 'SOUNDSCAPE',
+      primaryColor: AppColors.violetAccent,
+      accentColor: AppColors.emeraldAccent,
       icon: Icons.nightlight_round,
       defaultIntensity: 0.55,
     ),
   ];
-
-  static List<Soundscape> get rhythmicSongs =>
-      all.where((s) => s.hasRhythmBeat).toList();
-
-  static List<Soundscape> get pureAmbience =>
-      all.where((s) => !s.hasRhythmBeat).toList();
 
   static List<Soundscape> getByMode(SoundscapeMode mode) {
     return all.where((s) => s.mode == mode).toList();

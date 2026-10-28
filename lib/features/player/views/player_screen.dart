@@ -295,6 +295,118 @@ class PlayerScreen extends StatelessWidget {
               ),
             ),
 
+            // Neuro-Acoustic Protocol & Scientific Blueprint Card
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: AppColors.surface,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: soundscape.primaryColor.withOpacity(0.25),
+                      width: 1,
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.psychology_rounded,
+                                size: 16,
+                                color: soundscape.primaryColor,
+                              ),
+                              const SizedBox(width: 8),
+                              const Text(
+                                'NEUROLOGICAL PROTOCOL',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 1.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                            decoration: BoxDecoration(
+                              color: soundscape.primaryColor.withOpacity(0.15),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              playerVM.selectedMode.idealSessionLength,
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontFamily: 'monospace',
+                                fontWeight: FontWeight.w700,
+                                color: soundscape.primaryColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        playerVM.selectedMode.whyItWorks,
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: AppColors.textSecondary,
+                          height: 1.45,
+                        ),
+                      ),
+                      const SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Target: ${playerVM.selectedMode.targetBrainwave}',
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontFamily: 'monospace',
+                                color: soundscape.primaryColor.withOpacity(0.9),
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              timerVM.setSessionMinutes(playerVM.selectedMode.defaultMinutes);
+                              onOpenTimer();
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: soundscape.primaryColor.withOpacity(0.18),
+                              foregroundColor: soundscape.primaryColor,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12),
+                                side: BorderSide(
+                                  color: soundscape.primaryColor.withOpacity(0.4),
+                                ),
+                              ),
+                              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                              visualDensity: VisualDensity.compact,
+                            ),
+                            icon: const Icon(Icons.play_arrow_rounded, size: 16),
+                            label: Text(
+                              '${playerVM.selectedMode.defaultMinutes}m Session',
+                              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
             // Soundscape Library Header
             SliverToBoxAdapter(
               child: Padding(

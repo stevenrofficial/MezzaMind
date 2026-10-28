@@ -67,6 +67,16 @@ class TimerViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void setSessionMinutes(int minutes) {
+    if (isRunning) return;
+    _type = TimerType.countdown;
+    _totalSeconds = minutes * 60;
+    _remainingSeconds = _totalSeconds;
+    _elapsedSeconds = 0;
+    _status = TimerStatus.idle;
+    notifyListeners();
+  }
+
   void setTimerType(TimerType type) {
     if (isRunning) return;
     _type = type;
