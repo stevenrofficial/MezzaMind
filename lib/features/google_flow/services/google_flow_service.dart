@@ -30,17 +30,19 @@ class GoogleFlowService extends ChangeNotifier {
       }
     }
 
-    // If empty, add a default preloaded Google Flow AI demo track
-    if (_tracks.isEmpty) {
-      _tracks.add(
+    // Ensure the user's liked song "Hypnotic 909 Pulse" is always present in library
+    final has909 = _tracks.any((t) => t.id == 'flow_hypnotic_909');
+    if (!has909) {
+      _tracks.insert(
+        0,
         GoogleFlowTrack(
-          id: 'google_flow_demo_1',
-          title: 'Google Flow AI • Fluid Cognition',
-          audioPath: 'assets/audio/songs/google_flow_sample.wav',
+          id: 'flow_hypnotic_909',
+          title: 'Hypnotic 909 Pulse',
+          audioPath: 'assets/audio/songs/hypnotic_909_pulse.m4a',
           isRemote: false,
           mode: SoundscapeMode.deepFocus,
-          targetBrainwave: '28 Hz Beta/Gamma',
-          bpm: 120,
+          targetBrainwave: '14–40 Hz Beta/Gamma',
+          bpm: 138,
           dateAdded: DateTime.now(),
         ),
       );
@@ -100,7 +102,10 @@ class GoogleFlowService extends ChangeNotifier {
     return null;
   }
 
-  /// Import by direct audio stream URL from Google Flow / Google Cloud
+  static final RegExp _flowMusicUrlPattern =
+      RegExp(r'(?:flowmusic\.app/song/|clips/)([a-zA-Z0-9\-]+)');
+
+  /// Import by direct audio stream URL or FlowMusic app link
   Future<GoogleFlowTrack> importFromUrl({
     required String url,
     required String title,
@@ -108,14 +113,35 @@ class GoogleFlowService extends ChangeNotifier {
     required String targetBrainwave,
     int? bpm,
   }) async {
+    String resolvedAudioPath = url.trim();
+    String resolvedTitle = title.trim();
+    int? resolvedBpm = bpm;
+
+    final match = _flowMusicUrlPattern.firstMatch(url);
+    if (match != null) {
+      final clipId = match.group(1)!;
+      // Direct stream URL hosted on Google Cloud Storage
+      resolvedAudioPath =
+          'https://storage.googleapis.com/producer-app-public/clips/$clipId.m4a';
+
+      if (resolvedTitle.isEmpty) {
+        if (clipId.contains('3a48deae-a4ba-4362-9993-fd848b970bc7')) {
+          resolvedTitle = 'Hypnotic 909 Pulse';
+          resolvedBpm = 138;
+        } else {
+          resolvedTitle = 'Flow Music Track ($clipId)';
+        }
+      }
+    }
+
     final newTrack = GoogleFlowTrack(
       id: 'flow_url_${DateTime.now().millisecondsSinceEpoch}',
-      title: title.trim().isEmpty ? 'Google Flow Cloud Stream' : title.trim(),
-      audioPath: url.trim(),
+      title: resolvedTitle.isEmpty ? 'Google Flow AI Track' : resolvedTitle,
+      audioPath: resolvedAudioPath,
       isRemote: true,
       mode: mode,
       targetBrainwave: targetBrainwave,
-      bpm: bpm,
+      bpm: resolvedBpm ?? 138,
       dateAdded: DateTime.now(),
     );
 

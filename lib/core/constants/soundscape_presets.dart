@@ -8,6 +8,26 @@ class SoundscapePresets {
 
   static const List<Soundscape> all = [
     // =========================================================================
+    // 🎧 GOOGLE FLOW AI TRACKS
+    // =========================================================================
+    Soundscape(
+      id: 'google_flow_hypnotic_909',
+      title: 'Hypnotic 909 Pulse',
+      subtitle: 'Minimalist high-tech electronic, 138 BPM, 909 drums, layered analog bass & stabs (Google Flow AI)',
+      mode: SoundscapeMode.deepFocus,
+      audioUrl: 'assets/audio/songs/hypnotic_909_pulse.m4a',
+      binauralHz: '14–40 Hz Beta/Gamma',
+      tag: '138 BPM • GOOGLE FLOW',
+      primaryColor: Color(0xFF4285F4),
+      accentColor: Color(0xFF34A853),
+      icon: Icons.auto_awesome_rounded,
+      bpm: 138,
+      genre: 'FLOW MUSIC AI',
+      hasRhythmBeat: true,
+      defaultIntensity: 0.9,
+    ),
+
+    // =========================================================================
     // 1. DEEP FOCUS / CODING (Beta / Low Gamma: 14 Hz – 40 Hz • 50–90 mins)
     // =========================================================================
     Soundscape(

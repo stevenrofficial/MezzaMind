@@ -69,23 +69,29 @@ class _GoogleFlowStudioSheetState extends State<GoogleFlowStudioSheet> {
       context: context,
       builder: (ctx) => AlertDialog(
         backgroundColor: AppColors.surfaceElevated,
-        title: const Text('Import Google Flow Stream URL'),
+        title: const Text('Import from Flow Music'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextField(
-              controller: titleController,
-              decoration: const InputDecoration(
-                labelText: 'Track Title',
-                hintText: 'e.g. Google Flow Ambient Sprint #1',
-              ),
+            const Text(
+              'Paste any song link from flowmusic.app or a direct audio URL:',
+              style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: urlController,
               decoration: const InputDecoration(
-                labelText: 'Direct Audio Stream URL',
-                hintText: 'https://...',
+                labelText: 'Flow Music URL or Audio Stream',
+                hintText: 'https://www.flowmusic.app/song/...',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: titleController,
+              decoration: const InputDecoration(
+                labelText: 'Custom Title (Optional)',
+                hintText: 'Auto-detected if blank',
               ),
             ),
           ],
